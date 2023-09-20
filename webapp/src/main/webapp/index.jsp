@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+function startGame() {
+  myGamePiece = new component(30, 30, "red", 10, 120);
+  myGamePiece.gravity = 0.05;
+  myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+  myGameArea.start();
+}
 
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <div class="container-fluid">
-    <section class="main">
-      <section class="inputs">
-        <input type="text" placeholder="Enter any city..." id="cityinput">
-        <input type="submit" value="Submit" id="add">
-        <button placeholder="submit" id="add"></button>
-      </section>
-
-      <section class="display">
-        <div class="wrapper">
-          <h2 id="cityoutput"></h2>
-          <p id="description"></p>
-          <p id="temp"></p>
-          <p id="wind"></p>
-        </div>
-      </section>
-    </section>
-
-  </div>
-</body>
-
-</html>
+var myGameArea = {
+  canvas : document.createElement("canvas"),
+  start : function() {
+    this.canvas.width = 480;
+    this.canvas.height = 270;
+    this.context = this.canvas.getContext("2d");
+    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+    this.frameNo = 0;
+  },
+  clear : function() {
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  }
+}
