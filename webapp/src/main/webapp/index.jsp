@@ -1,20 +1,23 @@
-function startGame() {
-  myGamePiece = new component(30, 30, "red", 10, 120);
-  myGamePiece.gravity = 0.05;
-  myScore = new component("30px", "Consolas", "black", 280, 40, "text");
-  myGameArea.start();
-}
+<form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
 
-var myGameArea = {
-  canvas : document.createElement("canvas"),
-  start : function() {
-    this.canvas.width = 480;
-    this.canvas.height = 270;
-    this.context = this.canvas.getContext("2d");
-    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-    this.frameNo = 0;
-  },
-  clear : function() {
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  }
-}
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
